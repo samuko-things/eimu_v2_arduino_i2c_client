@@ -23,6 +23,8 @@ public:
 
   float readGyroVariance(int);
 
+  float readMag(int);
+
   bool setWorldFrameId(int);
 
   int getWorldFrameId();
@@ -32,10 +34,8 @@ public:
 
 private:
   int slaveAddr;
-  String dataMsg = "", dataMsgBuffer = "", dataBuffer[2];
-  float valA, valB;
 
-  void get(String, int);
+  float get(String, int);
 
   bool send(String, int, float);
 
