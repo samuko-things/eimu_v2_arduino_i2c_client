@@ -53,6 +53,12 @@ float EIMU_V2::readGyroVariance(int pos_no)
   return gyro_var;
 }
 
+float EIMU_V2::readMag(int pos_no)
+{
+  float acc = get("/mag", pos_no);
+  return acc;
+}
+
 bool EIMU_V2::setWorldFrameId(int id=1)
 {
   return send("/frame-id", -1, id);
